@@ -82,15 +82,26 @@ exports.arraysAnswers = {
     },
 
     insert: function (arr, item, index) {
-
+		var newArr=[];
+		if(arr){
+			for(var i=0; i< arr.length; i++){
+				if(i === index) newArr.push(item);
+				newArr.push(arr[i]);
+			}
+		}
+		return newArr;
     },
 
     count: function (arr, item) {
-
+		var counter=0;
+		if(arr)	for(var i=0; i< arr.length; i++) if(arr[i] === item) counter++;
+		return counter;
     },
 
     duplicates: function (arr) {
-
+		var dup =[];
+		if(arr) for(var i=0; i< arr.length; i++) if((this.count(arr,arr[i]) > 1) && (dup.indexOf(arr[i]) === -1)) dup.push(arr[i]);
+		return dup;
     },
 
     square: function (arr) {
@@ -98,6 +109,8 @@ exports.arraysAnswers = {
     },
 
     findAllOccurrences: function (arr, target) {
-
+		var occ =[];
+		if(arr) for(var i=0; i< arr.length; i++) if(arr[i]=== target) occ.push(i);
+		return occ;
     }
 };
