@@ -14,11 +14,20 @@ exports.functionsAnswers = {
     },
 
     makeClosures: function (arr, fn) {
-
+		return arr.map(function(item){ 
+			var sqr_num = fn(item);
+			var sqr = function(){ 
+						return sqr_num; 
+					};
+			return sqr; 
+		});
     },
 
     partial: function (fn, str1, str2) {
-
+		var op=str1+ ', ' +str2;
+		return function(str3) {
+			return op+str3;
+		};
     },
 
     useArguments: function () {
