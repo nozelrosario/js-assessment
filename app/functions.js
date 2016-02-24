@@ -1,39 +1,39 @@
 exports = (typeof window === 'undefined') ? global : window;
 
 exports.functionsAnswers = {
-  argsAsArray : function(fn, arr) {
+    argsAsArray: function (fn, arr) {
+        return fn.apply(this, arr);
+    },
 
-  },
+    speak: function (fn, obj) {
+        return fn.call(obj);
+    },
 
-  speak : function(fn, obj) {
+    functionFunction: function (str) {
+        return function (str_inner) { return str + ', ' + str_inner; }
+    },
 
-  },
+    makeClosures: function (arr, fn) {
 
-  functionFunction : function(str) {
+    },
 
-  },
+    partial: function (fn, str1, str2) {
 
-  makeClosures : function(arr, fn) {
+    },
 
-  },
+    useArguments: function () {
 
-  partial : function(fn, str1, str2) {
+    },
 
-  },
+    callIt: function (fn) {
 
-  useArguments : function() {
+    },
 
-  },
+    partialUsingArguments: function (fn) {
 
-  callIt : function(fn) {
+    },
 
-  },
+    curryIt: function (fn) {
 
-  partialUsingArguments : function(fn) {
-
-  },
-
-  curryIt : function(fn) {
-
-  }
+    }
 };
